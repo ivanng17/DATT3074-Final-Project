@@ -78,16 +78,16 @@ async function setup() {
     makeSliders(device);
 
     // (Optional) Create a form to send messages to RNBO inputs
-    makeInportForm(device);
+    //makeInportForm(device);
 
     // (Optional) Attach listeners to outports so you can log messages from the RNBO patcher
-    attachOutports(device);
+    //attachOutports(device);
 
     // (Optional) Load presets, if any
-    loadPresets(device, patcher);
+    //loadPresets(device, patcher);
 
     // (Optional) Connect MIDI inputs
-    makeMIDIKeyboard(device);
+    //makeMIDIKeyboard(device);
 
     document.body.onclick = () => {
         context.resume();
@@ -97,6 +97,7 @@ async function setup() {
     if (typeof guardrails === "function")
         guardrails();
 }
+
 
 function loadRNBOScript(version) {
     return new Promise((resolve, reject) => {
@@ -207,7 +208,7 @@ function makeSliders(device) {
         uiElements[param.id].text.value = param.value.toFixed(1);
     });
 }
-
+/*
 function makeInportForm(device) {
     const idiv = document.getElementById("rnbo-inports");
     const inportSelect = document.getElementById("inport-select");
@@ -333,7 +334,7 @@ function makeMIDIKeyboard(device) {
         key.addEventListener("pointerup", () => key.classList.remove("clicked"));
 
         mdiv.appendChild(key);
-    });
+    }); 
 }
-
+*/
 setup();
