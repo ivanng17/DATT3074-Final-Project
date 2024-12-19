@@ -20,6 +20,9 @@
     <div id="rnbo-root">
 		<div>
 			<h1 id="patcher-title">10 Years of YorkU Weather</h1>
+            <p><b>By: Ivan Ng</b></p>
+            <p><b>Student No. 218217968</b></p>
+            <p>Experience 10 years of weather surrounding the York University campus in this fun visualization which shows the average temperature and total precipitation levels of each month within those years.</p>
 		</div>
         
         <!--
@@ -40,10 +43,10 @@
         </div>
         -->
 		<div id="rnbo-console">
-			<h2>Outports</h2>
-			<em id="no-outports-label">No outports available</em>
-			<div id="rnbo-console-div">
-				<p id="rnbo-console-readout">Waiting for messages...</p>
+			<h2 style="color:white;">Outports</h2>
+			<em style="color:white;" id="no-outports-label">No outports available</em>
+			<div style="color:white;" id="rnbo-console-div">
+				<p style="color:white;" id="rnbo-console-readout">Waiting for messages...</p>
                 <!--
 				<em id="rnbo-console-description">Check the developer console for more messages from the RNBO device</em>
                 -->
@@ -59,11 +62,17 @@
         
         <div id="rnbo-parameter-sliders">
             <h2>Parameters</h2>
+            <p>Choose the speed of the visualization with the "timeinterval" slider and slide the "start" slider all the way to the right to begin.</p>
             <em id="no-param-label">No parameters</em>
         </div>
 
         <canvas id="myCanvas" width="500" height="500" style="border:1px solid black;"></canvas>
+        <div id="rnbo-parameter-sliders">
+            <p>The bars on the top of the visualization and the noise you hear represent the amount of total precipitation experienced within the month. The more precipitation experienced, the longer the bars get and the louder the noise gets.</p> 
+            <p>The bar in the center and the beeping you hear represent the average temperature for that month. The size, colour and direction of the bar and pitch of the beeping changes depending on how hot or cold the temperature is.</p>
+        </div>
         <script type="text/javascript" src="js/sketch.js"></script>
+
 
     </div>
     

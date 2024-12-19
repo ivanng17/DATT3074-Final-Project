@@ -266,7 +266,7 @@ function attachOutports(device) {
 
         // Message events have a tag as well as a payload
         console.log(`${ev.tag}: ${ev.payload}`);
-        counter = ev.payload;
+        counter = ev.payload - 1;
         draw(counter);
         document.getElementById("rnbo-console-readout").innerText = `${ev.tag}: ${ev.payload}`;
     });

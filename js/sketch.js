@@ -7,7 +7,7 @@ let barHeight = 0;
 
 function draw(counter) {
   const back = canvas.getContext("2d");
-  back.fillStyle = "white";
+  back.fillStyle = "rgb(245, 245, 245)";
   back.fillRect(0, 0, 500, 500);
 
   const rain1 = canvas.getContext("2d");
@@ -80,13 +80,21 @@ function draw(counter) {
   rain10.fillStyle = raingradient10;
   rain10.fillRect(463, 0, 25, barHeight + precipitation[counter]);
   
-  const ctx3 = canvas.getContext("2d");
-  ctx3.fillStyle = "red";
-  ctx3.fillRect(0, lineY - (temps[counter] * 2), 500, 500);
-  
-  const labelBack = canvas.getContext("2d");
-  labelBack.fillStyle = "white";
-  labelBack.fillRect(125, 380, 250, 100);
+  const weatherBar = canvas.getContext("2d");
+  if (temps[counter] <= 0){
+    const weatherbarNegative = weatherBar.createLinearGradient(0, 250, 0, 300);
+    weatherbarNegative.addColorStop(0, "rgb(103, 103, 228)");
+    weatherbarNegative.addColorStop(1, "rgb(28, 28, 150)");
+    weatherBar.fillStyle = weatherbarNegative;
+    weatherBar.fillRect(0, 250, 500, temps[counter] * -4);
+  }
+  if (temps[counter] > 0){
+    const weatherbarPositive = weatherBar.createLinearGradient(0, 250, 0, 200);
+    weatherbarPositive.addColorStop(0, "rgb(219, 112, 85)");
+    weatherbarPositive.addColorStop(1, "rgb(221, 10, 10)");
+    weatherBar.fillStyle = weatherbarPositive;
+    weatherBar.fillRect(0, 250 - temps[counter] * 4, 500, temps[counter] * 4);
+  }
 
   const label1 = canvas.getContext("2d");
   label1.font = "20px Arial";
@@ -97,13 +105,23 @@ function draw(counter) {
   const label2 = canvas.getContext("2d");
   label2.font = "20px Arial";
   label2.fillStyle = "black";
-  label2.fillText("Temperature: " + temps[counter] + "° C", 250, 430); 
+  label2.fillText("Average Temperature: " + temps[counter] + "° C", 250, 430); 
   label2.textAlign = "center";
 
   const label3 = canvas.getContext("2d");
   label3.font = "20px Arial";
   label3.fillStyle = "black";
-  label3.fillText("Precipitation: " + precipitation[counter] + "mm", 250, 460); 
+  label3.fillText("Total Precipitation: " + precipitation[counter] + "mm", 250, 460); 
   label3.textAlign = "center";
+
+  const zeroBar = canvas.getContext("2d");
+  zeroBar.fillStyle = "black";
+  zeroBar.fillRect(0, 249, 500, 1);
+
+  const zeroLabel = canvas.getContext("2d");
+  zeroLabel.font = "10px Arial";
+  zeroLabel.fillStyle = "black";
+  zeroLabel.fillText("0°C", 10, 245); 
+  zeroLabel.textAlign = "center";
 
   }
