@@ -1,3 +1,4 @@
+<!-- Code mainly comes from the RNBO JS Template: https://github.com/Cycling74/rnbo.example.webpage -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,8 @@
 
     <div id="rnbo-root">
 		<div>
+            <!-- title, student info and description of the visualization -->
+            <!-- Text code comes from W3Schools: https://www.w3schools.com/html/html_styles.asp https://www.w3schools.com/html/html_formatting.asp -->
 			<h1 id="patcher-title">10 Years of YorkU Weather</h1>
             <p><b>By: Ivan Ng</b></p>
             <p><b>Student No. 218217968</b></p>
@@ -42,6 +45,8 @@
             </form>
         </div>
         -->
+        <!-- The outports of the RNBO patch -->
+        <!-- Text is white to hide it -->
 		<div id="rnbo-console">
 			<h2 style="color:white;">Outports</h2>
 			<em style="color:white;" id="no-outports-label">No outports available</em>
@@ -52,6 +57,7 @@
                 -->
 			</div>
 		</div>
+
         <!--
 		<div id="rnbo-presets">
 			<h2>Presets</h2>
@@ -59,18 +65,20 @@
 			<select id="preset-select"></select>
 		</div>
         -->
-        
+        <!-- Sliders for the RNBO params -->
         <div id="rnbo-parameter-sliders">
             <h2>Parameters</h2>
             <p>Choose the speed of the visualization with the "timeinterval" slider and slide the "start" slider all the way to the right to begin.</p>
             <em id="no-param-label">No parameters</em>
         </div>
-
+        <!-- Canvas code comes from: https://www.w3schools.com/html/html5_canvas.asp -->
         <canvas id="myCanvas" width="500" height="500" style="border:1px solid black;"></canvas>
         <div id="rnbo-parameter-sliders">
+            <!-- Information for the patch -->
             <p>The bars on the top of the visualization and the noise you hear represent the amount of total precipitation experienced within the month. The more precipitation experienced, the longer the bars get and the louder the noise gets.</p> 
             <p>The bar in the center and the beeping you hear represent the average temperature for that month. The size, colour and direction of the bar and pitch of the beeping changes depending on how hot or cold the temperature is.</p>
         </div>
+        <!-- Loading sketch,js -->
         <script type="text/javascript" src="js/sketch.js"></script>
 
 

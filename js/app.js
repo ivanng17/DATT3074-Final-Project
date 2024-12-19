@@ -1,4 +1,5 @@
-let counter;
+//All code here comes from the RNBO JS Template: https://github.com/Cycling74/rnbo.example.webpage
+let counter; //counter from the RNBO patch
 
 async function setup() {
     const patchExportURL = "export/patch.export.json";
@@ -267,7 +268,7 @@ function attachOutports(device) {
         // Message events have a tag as well as a payload
         console.log(`${ev.tag}: ${ev.payload}`);
         counter = ev.payload - 1;
-        draw(counter);
+        draw(counter); //send the counter amount to the draw function in the sketch.js file
         document.getElementById("rnbo-console-readout").innerText = `${ev.tag}: ${ev.payload}`;
     });
 }
