@@ -1,3 +1,5 @@
+let counter;
+
 async function setup() {
     const patchExportURL = "export/patch.export.json";
 
@@ -72,7 +74,7 @@ async function setup() {
     device.node.connect(outputNode);
 
     // (Optional) Extract the name and rnbo version of the patcher from the description
-    document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "10 Years of YorkU Weather") + " (v" + patcher.desc.meta.rnboversion + ")";
+    document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "10 Years of YorkU Weather");
 
     // (Optional) Automatically create sliders for the device parameters
     makeSliders(device);
@@ -81,7 +83,7 @@ async function setup() {
     //makeInportForm(device);
 
     // (Optional) Attach listeners to outports so you can log messages from the RNBO patcher
-    //attachOutports(device);
+    attachOutports(device);
 
     // (Optional) Load presets, if any
     //loadPresets(device, patcher);
@@ -247,6 +249,7 @@ function makeInportForm(device) {
         }
     }
 }
+*/
 
 function attachOutports(device) {
     const outports = device.outports;
@@ -263,11 +266,13 @@ function attachOutports(device) {
 
         // Message events have a tag as well as a payload
         console.log(`${ev.tag}: ${ev.payload}`);
-
+        counter = ev.payload;
+        draw(counter);
         document.getElementById("rnbo-console-readout").innerText = `${ev.tag}: ${ev.payload}`;
     });
 }
 
+/*
 function loadPresets(device, patcher) {
     let presets = patcher.presets || [];
     if (presets.length < 1) {
