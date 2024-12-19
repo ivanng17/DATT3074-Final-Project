@@ -2,7 +2,7 @@
 let counter; //counter from the RNBO patch
 
 async function setup() {
-    const patchExportURL = "export/patch.export.json";
+    const patchExportURL = "./export/patch.export.json";
 
     // Create AudioContext
     const WAContext = window.AudioContext || window.webkitAudioContext;
@@ -47,7 +47,7 @@ async function setup() {
     // (Optional) Fetch the dependencies
     let dependencies = [];
     try {
-        const dependenciesResponse = await fetch("export/dependencies.json");
+        const dependenciesResponse = await fetch("./export/dependencies.json");
         dependencies = await dependenciesResponse.json();
 
         // Prepend "export" to any file dependenciies
