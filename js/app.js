@@ -75,7 +75,7 @@ async function setup() {
     device.node.connect(outputNode);
 
     // (Optional) Extract the name and rnbo version of the patcher from the description
-    document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "10 Years of YorkU Weather");
+    document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "York University's Weather from 2014-2024");
 
     // (Optional) Automatically create sliders for the device parameters
     makeSliders(device);
