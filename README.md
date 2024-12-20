@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a data visualization project using JavaScript and RNBO to make an audio/visual representation of a specific data set. The data set that is being referred to comes from ClimateData.com and has to deal with the monthly numbers of average temperatures and the total precipitation that the area around the York University campus had experienced from 2014-2024. 
+This is a data visualization project using JavaScript and RNBO to make an audio/visual representation of a specific data set. The data set that is being referred to comes from ClimateData.ca and has to deal with the monthly numbers of average temperatures and the total precipitation that the area around the York University campus had experienced from 2014-2024. 
 
 The visualization can be accessed here:
 
@@ -18,6 +18,8 @@ I decided on this data set due to this reason and I decided to specify the area 
 Most of the code in this repository is taken from the RNBO JS template which is found here: https://github.com/Cycling74/rnbo.example.webpage <br>
 Additional code was taken from: https://www.w3schools.com/ (with specific references in the source code of this repo). <br>
 In the Max/RNBO patcher, the patcher uses a gen based off of the random-integer code example from the Generating Sound and Organizing Time textbook. <br>
+The https://climatedata.ca/ data was taken from the coordinates 43.79166794, -79.54166412 and the ssp245_tg_mean_p50 and ssp245_prcptot_p50 columns of the average temperature and total precipitation charts respectively. 
+
 
 ## Additional Notes
 
